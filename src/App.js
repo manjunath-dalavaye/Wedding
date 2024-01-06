@@ -6,6 +6,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Carousel from "./component/Carousel/Carousel";
 import Intro from './component/Intro/Intro';
 import NavBar from './component/Navbar/NavBar';
+import Banner from './component/Banner-1/BannerOne';
+import Friend from './component/Friend/Friend';
+import Footer from './component/Footer/Footer';
 
 function App() {
   return (
@@ -13,6 +16,10 @@ function App() {
       <NavBar/>
       <Carousel/>
       <Intro/>
+      <Banner/>
+      <Friend/>
+      <Footer/>
+      
     </div>
   );
 }
