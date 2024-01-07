@@ -1,10 +1,10 @@
-// Carouselpage.js
 import React, { useState } from "react";
 import Carousel from "react-bootstrap/Carousel";
-import exampleImage1 from "../../assets/slide-image-1920-d.jpg";
+import exampleImage1 from "../../assets/slide-image-1920-d.jpg"; // Import your image files
 import exampleImage2 from "../../assets/slide-image-1920-f.jpg";
 import exampleImage3 from "../../assets/slide-image-1920-h.jpg";
-import "./corosel.page.css"; // Import your custom CSS file
+import { CarouselCaption } from "react-bootstrap";
+import styles from "./Carouselpage.module.css";
 
 function Carouselpage() {
   const [index, setIndex] = useState(0);
@@ -13,73 +13,85 @@ function Carouselpage() {
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
-
   return (
-    <div
-      className="carousel-container"
-      onMouseEnter={() => setShowArrows(true)}
-      onMouseLeave={() => setShowArrows(false)}
-    >
-      <Carousel
-        nextIcon={showArrows && <span className="custom-arrow">❯</span>}
-        prevIcon={showArrows && <span className="custom-arrow">❮</span>}
-        indicators={false}
-        activeIndex={index}
-        onSelect={handleSelect}
-      >
+    <div>
+      <Carousel className={styles.wrapper} xs={6} md={4} indicators={false}>
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src={exampleImage1}
+            src={exampleImage1} // Use the imported image file
             alt="First slide"
+            width="100%"
+            height="100%"
           />
-          <Carousel.Caption>
-            <div className="caption-content">
-              <div className="line"></div>
-              <h4>We are getting married</h4>
-              <div className="line"></div>
-              <div className="heart-container">
-                <span className="heart">❤️</span>
-                <span className="heart" style={{ color: 'white' }}>❤️</span>
+          <CarouselCaption>
+            <div className={styles.curve}>
+              <div className={styles.save}>Save</div>
+              <div className={styles.the_date}>The Date</div>
+              <div className={styles.date}>
+                - 19<span className={styles.color}>.</span>2
+                <span className={styles.color}>.</span>23 -
               </div>
             </div>
-          </Carousel.Caption>
+            <div className={styles.banner}>
+              <hr />
+
+              <h4>*** WE ARE GETTING MARRIED ***</h4>
+              <hr />
+            </div>
+          </CarouselCaption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img
             className="d-block w-100"
             src={exampleImage2}
             alt="Second slide"
+            width="100%"
+            height="100%"
           />
-          <Carousel.Caption>
-            <div className="caption-content">
-              <div className="line"></div>
-              <h4>We are getting married</h4>
-              <div className="line"></div>
-              <div className="heart-container">
-                <span className="heart">❤️</span>
-                <span className="heart" style={{ color: 'white' }}>❤️</span>
+          <CarouselCaption>
+            <div className={styles.curve}>
+              <div className={styles.save}>Save</div>
+              <div className={styles.the_date}>The Date</div>
+              <div className={styles.date}>
+                - 19<span className={styles.color}>.</span>2
+                <span className={styles.color}>.</span>23 -
               </div>
             </div>
-          </Carousel.Caption>
+            <div className={styles.banner}>
+              <hr />
+              <h4>*** WE ARE GETTING MARRIED ***</h4>
+              <hr />
+            </div>
+          </CarouselCaption>
         </Carousel.Item>
+
         <Carousel.Item>
           <img
             className="d-block w-100"
             src={exampleImage3}
             alt="Third slide"
+            width="100%"
+            height="100%"
           />
-          <Carousel.Caption>
-            <div className="caption-content">
-              <div className="line"></div>
-              <h4>We are getting married</h4>
-              <div className="line"></div>
-              <div className="heart-container">
-                <span className="heart">❤️</span>
-                <span className="heart" style={{ color: 'white' }}>❤️</span>
+          <CarouselCaption>
+            <div className={styles.curve}>
+              <div className={styles.save}>Save</div>
+              <div className={styles.the_date}>The Date</div>
+              <div className={styles.date}>
+                - 19<span className={styles.color}>.</span>2
+                <span className={styles.color}>.</span>23 -
               </div>
             </div>
-          </Carousel.Caption>
+            <div className={styles.banner}>
+              <hr />
+              <h4 className={styles["banner-text"]}>
+                *** WE ARE GETTING MARRIED ***
+              </h4>
+              <hr />
+            </div>
+          </CarouselCaption>
         </Carousel.Item>
       </Carousel>
     </div>

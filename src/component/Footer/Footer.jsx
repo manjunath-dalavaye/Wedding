@@ -1,7 +1,6 @@
-// Banner.jsx
+// Footer.jsx
 import React from "react";
-import styles from "./Footer.module.css"; // Import the module-scoped CSS
-// import weddingImage from "../../Assets/parallax-image-1a.jpg";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
   return (
@@ -19,20 +18,21 @@ const Footer = () => {
         style={{
           display: "flex",
           justifyContent: "center",
-          marginBottom: "180px",
+          marginBottom: "20px", // Adjusted margin for better spacing
         }}
       >
         Please reserve before June 19th, 2015. Lorem ipsum dolor sit amet,
-        consectetur adipiscing 
-
-        
+        consectetur adipiscing
       </p>
-      <div className={styles.button}>
-        <button>
-            RSVP
-        </button>
-        </div>
-   
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "180px",
+        }}
+      >
+        <button className={styles.rsvpButton}>RSVP</button>
+      </div>
 
       <div className={styles.Container}>
         <div className={styles.header__content}>

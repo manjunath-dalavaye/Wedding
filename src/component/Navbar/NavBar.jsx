@@ -1,85 +1,417 @@
-// NavBar.js
-import React from "react";
-import Container from "react-bootstrap/Container";
-import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import styles from "./Navbar.module.css";
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
-const NavBar = () => {
+const Navbar = () => {
+  const [click, setClick] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const handleClick = () => setClick(!click);
+
+  const handelScroll = () => {
+    const offset = window.scrollY;
+    if (offset > 20) {
+      setScrolled(true);
+    } else {
+      setScrolled(false);
+    }
+  };
+
+  const toggleVisible = () => {
+    const scrolled = document.documentElement.scrollTop;
+
+    if (scrolled > 200) {
+      setVisible(true);
+    } else if (scrolled <= 200) {
+      setVisible(false);
+    }
+  };
+
+  const scrollTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handelScroll);
+    window.addEventListener("scroll", toggleVisible);
+  }, []);
+
   return (
-    <Navbar
-      expand="lg"
-      className="navbar navbar-expand-lg navbar-light fixed-top bg-transparent"
-    >
-      <Container>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-        <div className={styles.pad}>
-          <Nav className="me-auto">
-            <NavDropdown title="HOME" id="basic-nav-dropdown-1">
-              <NavDropdown.Item href="#action/1.1">
-                MENU VARIATIONS{" "}
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.2">
-                SLIDER VARIATIONS{" "}
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.1">
-                PRELOADER VARIATIONS{" "}
-              </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="ABOUT" id="basic-nav-dropdown-2">
-              <NavDropdown.Item href="#action/2.1">ABOUT HIM</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.2">ABOUT HER</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="GALLERY" id="basic-nav-dropdown-2">
-              <NavDropdown.Item href="#action/2.1">GALLERY</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.2">
-                GALLERY WITH SLIDER
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">
-                FULL GALLERY - 5 COLUMN
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">
-                FULL GALLERY - 4 COLUMN
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">
-                FULL GALLERY - 3 COLUMN
-              </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="THE STORY">
-            </NavDropdown>
-            <NavDropdown title="THE WEDDING" id="basic-nav-dropdown-1">
-              <NavDropdown.Item href="#action/1.1">LOCATION</NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.2">
-                ACCOMODATION
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.1">BRIDESMAID</NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.1">GROOMSMEN</NavDropdown.Item>
-              <NavDropdown.Item href="#action/1.1">
-                GIFT REGISTRY
-              </NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="BLOG" id="basic-nav-dropdown-2">
-              <NavDropdown.Item href="#action/2.1">BLOG</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.2"> BLOG SLIDER</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">BLOG PARALLAX IMAGE</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">BLOG PARALLAX - SIDEBAR</NavDropdown.Item>
-            </NavDropdown>
-            <NavDropdown title="PAGE" id="basic-nav-dropdown-2">
-            </NavDropdown>
-            <NavDropdown title="RSVP" id="basic-nav-dropdown-2">
-              <NavDropdown.Item href="#action/2.1">RSVP - 1</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">RSVP - 2</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">RSVP - 3</NavDropdown.Item>
-              <NavDropdown.Item href="#action/2.1">CUSTOM </NavDropdown.Item>
-            </NavDropdown>
-          </Nav>
+    <>
+      <NavContainer>
+        <nav className={scrolled ? "nav scroll" : "nav"}>
+          <div className="navbar">
+            <ul className={click ? "nav__menu active" : "nav__menu"}>
+              <li>
+                <a href="#home" style={{ fontSize: "12px" }}>
+                  HOME{" "}
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      fontSize: "8px",
+                      marginLeft: "6px",
+                      color: "#f0394d",
+                    }}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#couple" style={{ fontSize: "15px" }}>
+                  ABOUT
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      fontSize: "8px",
+                      marginLeft: "6px",
+                      color: "#f0394d",
+                    }}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#ourStory" style={{ fontSize: "15px" }}>
+                  GALLERY{" "}
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      fontSize: "8px",
+                      marginLeft: "6px",
+                      color: "#f0394d",
+                    }}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#event" style={{ fontSize: "15px" }}>
+                  THE-STORY{" "}
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      fontSize: "8px",
+                      marginLeft: "6px",
+                      color: "#f0394d",
+                    }}
+                  />
+                </a>
+              </li>
+
+              <li
+                style={{
+                  width: "50px",
+                  height: "50px",
+                  borderRadius: "100%",
+                  backgroundColor: "#f0394d",
+                  color: "#fff",
+                  textAlign: "center",
+                  lineHeight: "30px",
+                }}
+              >
+                <a
+                  href="#event"
+                  style={{
+                    fontSize: "15px",
+                    textAlign: "center",
+                    lineHeight: "60px",
+                  }}
+                >
+                  G D
+                </a>
+              </li>
+
+              <li>
+                <a href="#friend" style={{ fontSize: "15px" }}>
+                  THE-WEDDING{" "}
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      fontSize: "8px",
+                      marginLeft: "6px",
+                      color: "#f0394d",
+                    }}
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="#gallery" style={{ fontSize: "15px" }}>
+                  BLOG{" "}
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      fontSize: "8px",
+                      marginLeft: "6px",
+                      color: "#f0394d",
+                    }}
+                  />
+                </a>
+              </li>
+
+              <li>
+                <a href="#rsvp" style={{ fontSize: "15px" }}>
+                  R.S.V.P
+                </a>
+              </li>
+            </ul>
+            <MenuBar onClick={handleClick}>
+              <div className={click ? "hamburger open" : "hamburger"}>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </MenuBar>
           </div>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+        </nav>
+      </NavContainer>
+      <Mobile onClick={handleClick}>
+        <div class={click ? "mobile__menu-list active" : "mobile__menu-list"}>
+          <ul>
+            <li>
+              <a href="#home" class="mobile__item">
+                HOME
+              </a>
+            </li>
+            <li>
+              <a href="#couple" class="mobile__item">
+                ABOUT
+              </a>
+            </li>
+            <li>
+              <a href="#ourStory" class="mobile__item">
+                GALLERY
+              </a>
+            </li>
+            <li>
+              <a href="#event" class="mobile__item">
+                THE STORY
+              </a>
+            </li>
+            <li>
+              <a href="#friend" class="mobile__item">
+                THE WEDDING
+              </a>
+            </li>
+            <li>
+              <a href="#gallery" class="mobile__item">
+                BLOG
+              </a>
+            </li>
+            <li>
+              <a href="#rsvp" class="mobile__item">
+                PAGE
+              </a>
+            </li>
+            <li>
+              <a href="#rsvp" class="mobile__item">
+                R.S.V.P
+              </a>
+            </li>
+          </ul>
+        </div>
+      </Mobile>
+      <BacktoTop>
+        <button className={visible ? "top active" : "top"} onClick={scrollTop}>
+          <img src="image/arrow.png" alt="arrow" />
+        </button>
+      </BacktoTop>
+    </>
   );
 };
 
-export default NavBar;
+export default Navbar;
+
+const BacktoTop = styled.div`
+  .top {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    outline: none;
+    border: none;
+    padding: 10px;
+    background: #cb966a;
+    display: none;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+      rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  }
+
+  .top.active {
+    display: block;
+    z-index: 9999;
+    cursor: pointer;
+  }
+`;
+
+const NavContainer = styled.div`
+  .nav {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 999;
+
+    @media (max-width: 920px) {
+      z-index: 9999;
+    }
+  }
+
+  @media (min-width: 920px) {
+    .nav.scroll {
+      background: #fff;
+      box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+        rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+
+      a {
+        color: #000;
+        transition: all 0.6s ease;
+        scroll-behavior: smooth;
+
+        &:hover {
+          color: #cb966a;
+        }
+      }
+    }
+  }
+  .navbar {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nav__menu {
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      list-style: none;
+      margin-left: 50px;
+
+      a {
+        text-decoration: none;
+        color: #fff;
+        transition: all 0.6s ease;
+
+        &:hover {
+          color: #cb966a;
+        }
+      }
+    }
+
+    @media (max-width: 920px) {
+      display: none;
+    }
+  }
+`;
+
+const MenuBar = styled.div`
+  display: none;
+
+  .hamburger {
+    position: relative;
+    width: 27px;
+    height: 22px;
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: 0.5s ease-in-out;
+  }
+
+  .hamburger span {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    right: 4px;
+    background: #fff;
+    border-radius: 6px;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  .hamburger span:nth-child(1) {
+    top: 0;
+  }
+
+  .hamburger span:nth-child(2),
+  .hamburger span:nth-child(3) {
+    top: 8px;
+  }
+
+  .hamburger span:nth-child(4) {
+    top: 16px;
+  }
+
+  .hamburger.open span:nth-child(1) {
+    top: 10px;
+    opacity: 0;
+  }
+
+  .hamburger.open span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+
+  .hamburger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+
+  .hamburger.open span:nth-child(4) {
+    top: 10px;
+    opacity: 0;
+  }
+
+  @media (max-width: 920px) {
+    display: block;
+    background: pink;
+    padding: 1rem;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 55px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  }
+`;
+
+const Mobile = styled.div`
+  .mobile__menu-list {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #f4f4f4;
+    z-index: 999;
+    display: none;
+  }
+
+  .mobile__menu-list ul {
+    padding-top: 2.5rem;
+    text-align: center;
+  }
+
+  .mobile__menu-list ul li {
+    margin: 3rem 0;
+  }
+
+  .mobile__menu-list ul li a {
+    font-size: 20px;
+    font-weight: 400;
+    color: #000;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+  .mobile__menu-list ul li a:hover {
+    color: #cb966a;
+  }
+
+  @media (max-width: 920px) {
+    .mobile__menu-list.active {
+      display: block;
+    }
+  }
+`;
