@@ -53,9 +53,10 @@ const Navbar = () => {
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{
-                      fontSize: "8px",
+                      fontSize: "10px",
                       marginLeft: "6px",
                       color: "#f0394d",
+                      marginLeft:"20px",
                     }}
                   />
                 </a>
@@ -66,9 +67,10 @@ const Navbar = () => {
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{
-                      fontSize: "8px",
+                      fontSize: "10px",
                       marginLeft: "6px",
                       color: "#f0394d",
+                      marginLeft:"20px",
                     }}
                   />
                 </a>
@@ -79,9 +81,10 @@ const Navbar = () => {
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{
-                      fontSize: "8px",
+                      fontSize: "10px",
                       marginLeft: "6px",
                       color: "#f0394d",
+                      marginLeft:"20px",
                     }}
                   />
                 </a>
@@ -92,7 +95,7 @@ const Navbar = () => {
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{
-                      fontSize: "8px",
+                      fontSize: "10px",
                       marginLeft: "6px",
                       color: "#f0394d",
                     }}
@@ -109,17 +112,33 @@ const Navbar = () => {
                   color: "#fff",
                   textAlign: "center",
                   lineHeight: "30px",
+                  justifyContent: "center",
+                  // paddingBottom: "20px",
+                  display:"inline",
                 }}
               >
-                <a
+               <a
                   href="#event"
                   style={{
                     fontSize: "15px",
                     textAlign: "center",
-                    lineHeight: "60px",
+                    lineHeight: "50px",
+                    color: "white",
                   }}
                 >
-                  G D
+                  G
+                  <FontAwesomeIcon
+                    icon={faHeart}
+                    style={{
+                      fontSize: "14px",
+                      marginLeft: "3px",
+                      marginRight: "3px",
+                      color: "white",
+                      // display:"flex",
+                      justifyContent:"center",
+                    }}
+                  />
+                  D
                 </a>
               </li>
 
@@ -129,9 +148,10 @@ const Navbar = () => {
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{
-                      fontSize: "8px",
+                      fontSize: "10px",
                       marginLeft: "6px",
                       color: "#f0394d",
+                      marginLeft:"15px",
                     }}
                   />
                 </a>
@@ -142,9 +162,10 @@ const Navbar = () => {
                   <FontAwesomeIcon
                     icon={faHeart}
                     style={{
-                      fontSize: "8px",
+                      fontSize: "10px",
                       marginLeft: "6px",
                       color: "#f0394d",
+                      marginLeft:"5px",
                     }}
                   />
                 </a>
