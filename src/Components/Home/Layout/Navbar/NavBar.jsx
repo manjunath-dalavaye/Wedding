@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
+import arrow from "../../../../Assets/arow.png";
 
 const Navbar = () => {
   const [click, setClick] = useState(false);
@@ -48,7 +49,7 @@ const Navbar = () => {
           <div className="navbar">
             <ul className={click ? "nav__menu active" : "nav__menu"}>
               <li>
-                <a href="#home" style={{ fontSize: "12px" }}>
+                <a href="#home" style={{ fontSize: "13px" }}>
                   HOME{" "}
                   <FontAwesomeIcon
                     icon={faHeart}
@@ -236,7 +237,7 @@ const Navbar = () => {
       </Mobile>
       <BacktoTop>
         <button className={visible ? "top active" : "top"} onClick={scrollTop}>
-          <img src="image/arrow.png" alt="arrow" />
+          <img src={arrow} alt="arrow" />
         </button>
       </BacktoTop>
     </>
@@ -257,7 +258,7 @@ const BacktoTop = styled.div`
     outline: none;
     border: none;
     padding: 10px;
-    background: #cb966a;
+    background: #f0394d;
     display: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
