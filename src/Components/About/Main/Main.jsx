@@ -20,8 +20,8 @@ const Main = () => {
             <div className="image-container">
               <div className="image-wrapper"></div>
             </div>
-            <p>
-              I'm Gerrard Leandro. Lorem ipsum dolor sit amet, consectetur
+            <p className="para">
+             <strong> I'm Gerrard Leandro. </strong>Lorem ipsum dolor sit amet, consectetur
               adipiscing elit. Fusce urna urna, imperdiet et purus ut, ultricies
               sollicitudin arcu. Cras placerat, arcu non faucibus suscipit, ex
               arcu consectetur enim, eu malesuada magna turpis sit amet mauris.
@@ -95,9 +95,11 @@ const Box = styled.div`
     }
 
     p {
-      font-size: 0.9rem;
-      font-weight: 500;
-      line-height: 1.4rem;
+    font-family: 'Arvo', serif;
+    font-size: 16px;
+    line-height: 26px;
+    margin-bottom: 25px;
+    text-align:left;
     }
 
     .image-container {

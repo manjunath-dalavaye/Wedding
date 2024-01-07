@@ -10,3 +10,10 @@
 .image {
     margin: auto;
 }
+
+.para{
+    font-family: 'Arvo', serif;
+    font-size: 15px;
+    line-height: 26px;
+    margin-bottom: 25px;
+}
