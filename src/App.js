@@ -1,25 +1,21 @@
-// App.js
-
+import './App.css';
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
-// import NavBar from "./component/Navbar/NavBar";
-import Carousel from "./component/Carousel/Carousel";
-import Intro from './component/Intro/Intro';
-import NavBar from './component/Navbar/NavBar';
-import Banner from './component/Banner-1/BannerOne';
-import Friend from './component/Friend/Friend';
-import Footer from './component/Footer/Footer';
+import Home from "./Components/Home/Home";
+// import About from "./Components/About";
+// import NavBar from "./Components/About/NavBar/NavBar";
+// import Header from './Components/About/Header/Header';
+// import Main from './Components/About/Main/Main';
+// import Footer from './Components/About/Footer-1/Footer';
+
 
 function App() {
   return (
     <div>
-      <NavBar/>
-      <Carousel/>
-      <Intro/>
-      <Banner/>
-      <Friend/>
-      <Footer/>
-      
+      <Home />
+      {/* <NavBar />
+      <Header />
+      <Main />
+      <Footer /> */}
     </div>
   );
 }

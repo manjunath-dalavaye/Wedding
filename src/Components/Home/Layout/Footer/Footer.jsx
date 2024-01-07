@@ -1,6 +1,7 @@
-// Footer.jsx
+// Banner.jsx
 import React from "react";
-import styles from "./Footer.module.css";
+import styles from "./Footer.module.css"; // Import the module-scoped CSS
+// import weddingImage from "../../Assets/parallax-image-1a.jpg";
 
 const Footer = () => {
   return (

@@ -236,7 +236,7 @@ const BacktoTop = styled.div`
     outline: none;
     border: none;
     padding: 10px;
-    background: #cb966a;
+    background: #f0394d;
     display: none;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
       rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
@@ -297,11 +297,11 @@ const NavContainer = styled.div`
 
       a {
         text-decoration: none;
-        color: #fff;
+        color: Black;
         transition: all 0.6s ease;
 
         &:hover {
-          color: #cb966a;
+          color: #f0394d;
         }
       }
     }

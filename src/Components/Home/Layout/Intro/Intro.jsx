@@ -1,18 +1,19 @@
 import React from "react";
 import styled from "styled-components";
-import him from "../../assets/him2.jpg";
-import her from "../../assets/her2.jpg";
-import "./Intro.modules.css";
+import him from "../../../../Assets/him2.jpg";
+import her from "../../../../Assets/her2.jpg";
+import "./Intro.module.css";
 
 const Intro = () => {
   return (
-    <div className="intro-header">
+    <IntroHeader>
       <h1>The Happy Couple</h1>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
-        ultrices malesuada ante quis pharetra. Nullam non bibendum dolor. Ut
-        vel turpis accumsan, <br /> efficitur dolor fermentum, tincidunt metus.
+        ultrices malesuada ante quis pharetra. Nullam non bibendum dolor. Ut vel
+        turpis accumsan, <br /> efficitur dolor fermentum, tincidunt metus.
       </p>
+
       <FriendsContainer>
         <Box>
           <div className="box">
@@ -45,7 +46,7 @@ const Intro = () => {
           </div>
         </Box>
       </FriendsContainer>
-    </div>
+    </IntroHeader>
   );
 };
 
@@ -63,11 +64,11 @@ const Box = styled.div`
 
   .box {
     width: 100%;
-    max-width: 400px; /* Adjust the maximum width as needed */
+    max-width: 400px;
     background: #fff;
     text-align: center;
-    padding: 1em; /* Adjust padding as needed */
-    padding-top: 20px; /* Adjust padding-top as needed */
+    padding: 1em;
+    padding-top: 20px;
 
     h2 {
       font-size: 1.3rem;
@@ -116,5 +117,18 @@ const Box = styled.div`
     .box {
       max-width: 100%;
     }
+  }
+`;
+
+const IntroHeader = styled.div`
+  text-align: center;
+  padding: 100px;
+
+  h1 {
+    /* Add any additional styles for h1 */
+  }
+
+  p {
+    /* Add any additional styles for p */
   }
 `;
