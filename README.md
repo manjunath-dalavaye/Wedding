@@ -13,7 +13,7 @@
 ->Elegant Styling: Blended custom CSS with Bootstrap components to achieve an elegant and 
  cohesive visual design, reflecting the romantic theme of the wedding.</br>
 
-  Skills: Media query · React rooter · React state and props · Carousels · Bootstrap (Framework)
+  <h5>Skills: Media query · React rooter · React state and props · Carousels · Bootstrap (Framework)</h5>
 
 <img width="949" alt="wedding-website" src="https://github.com/manjunath-dalavaye/Wedding/assets/111382056/568a539c-dd03-4597-aab7-376dea044d4c">
 
